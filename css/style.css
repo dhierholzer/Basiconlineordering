@@ -1,0 +1,33 @@
+#pizzasize {display:none;}
+#pizzatoppings {display:none;}
+#pizzatoppingtypes {display:none;}
+#pizzatoppingsort {display:none;}
+#btn2 {display:none;}
+#btn3 {display:none;}
+#btn4 {display:none;}
+#btn5 {display:none;}
+
+
+  #sortable1, #sortable2, #sortable3 {
+    border: 1px solid #eee;
+    width: 142px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li,  #sortable3 li{
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+  }
+  
+  #pos
+{
+    z-index:100;
+    position:absolute;    
+
+}
