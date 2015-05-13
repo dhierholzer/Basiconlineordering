@@ -9,11 +9,9 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
 </head>
 <body>
-<?php
-session_start();
-?>
 <!--First Pizza Form, Pick Pizza Crust Type-->
 <div id="pizzacrust">
       <form method="post" name="pizzacrustform" id="pizzacrustformid">	
@@ -168,22 +166,9 @@ session_start();
 								<img align="center" src="images/pizza.gif"/>
 								<h3>Whole Pizza</h3>
 									<ul id="sortable3" class="connectedSortable">
-											<?php 
-											  if(isset($_SESSION["selectedarray"][0])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][0] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][1])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][1] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][2])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][2] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][3])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][3] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][4])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][4] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][5])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][5] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][6])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][6] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][7])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][7] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][8])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][8] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][9])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][9] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][10])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][10] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][11])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][11] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][12])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][12] . '</li>';} else {echo ' ';}
-											  if(isset($_SESSION["selectedarray"][13])) {echo '<li class="ui-state-default">' . $_SESSION["selectedarray"][13] . '</li>';} else {echo ' ';}	
-											?>
+
+									<!--Javascript Function Populates This List-->
+									
 									</ul>
 							</div>	
 							
@@ -210,16 +195,6 @@ session_start();
 <!--Controls All Button Fades-->
 <script>
 $('#btn').click(function(e){ 
-			var pizzacrust= $('input[name="pizzacrust"]:checked').val();		
-			$.post("submit.php",
-					{
-					  data1: pizzacrust,
-					},
-					// Just A Test, Will add these form Values To Sessions and then to MySQL
-					function(data,status){
-					<!--    alert(data); Just To Test The Script -->
-					});
-
 				$('#pizzacrust, #btn').fadeOut('slow', function(){
 				  $('#pizzasize, #btn2').fadeIn('slow');
 				});
@@ -242,15 +217,26 @@ $('#btn3').click(function(e){
 
 $('#btn4').click(function(e){   
 	var selected = new Array();
+	var dataObj = {};
 		$("input:checkbox[name=toppingtypes]:checked").each(function()
 			{
 					 selected.push($(this).val());
-					 $.post("toppingtypes.php",
-					{
-					  selectedarray: selected,
-					},
-					function(data,status){
-					});
+					dataObj.stuff = selected;
+			        $.ajax({
+            url: '/echo/json/',
+            data: {
+                json: JSON.stringify(dataObj)
+            },
+            success: function(data) {
+                $("#sortable3").empty();
+                $.each(data.stuff, function(k, v) {
+                    $("#sortable3").append("<li>" + v + "</li>");
+                })
+            },
+            type: 'POST',
+            datatype: 'json',
+            cache: false
+        });		
 			});
 			<!-- For Testing:  alert(selected); -->
 			$('#pizzatoppingtypes, #btn4').fadeOut('slow', function(){
