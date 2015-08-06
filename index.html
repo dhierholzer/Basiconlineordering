@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,37 +9,37 @@
 
 
 <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
-<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
-<style>
-.myButton {
-	background-color:#44c767;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:14px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
-	background-color:#5cbf2a;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-.formfont {
-color: #181818;
-font-size: 17px;
-}
-</style>
+	<style>
+		.myButton {
+			background-color:#44c767;
+			-moz-border-radius:28px;
+			-webkit-border-radius:28px;
+			border-radius:28px;
+			border:1px solid #18ab29;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:14px;
+			padding:16px 31px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #2f6627;
+		}
+		.myButton:hover {
+			background-color:#5cbf2a;
+		}
+		.myButton:active {
+			position:relative;
+			top:1px;
+		}
+		.formfont {
+		color: #181818;
+		font-size: 17px;
+		}
+	</style>
 </head>
+
 <body>
 <!--First Pizza Form, Pick Pizza Crust Type-->
 <div class="pizzacrustformstyle" id="pizzacrust">
@@ -91,96 +90,96 @@ font-size: 17px;
 
 <!--Third Pizza Form, Select How Many Toppings-->
 <div class="pizzatoppingsformstyle" id="pizzatoppings">
-    <h2 class="formfont">Select How Many Toppings</h2>
-    <form method="post"  name="pizzatoppingsform" id="pizzatoppingsformid">
-        <div id="main">
-			<div class="example">
-			  <div>
-				<input id="plainpizza" type="radio" name="pizzatoppings" value="0" checked="checked"><label style="color:black; font-size: 20px;" for="plainpizza">Plain Pizza</label>
-			  </div>
-			  <div>
-				<input id="onepizza" type="radio" name="pizzatoppings" value="1"><label style="color:black; font-size: 20px;" for="onepizza">1 Topping</label>
-			  </div>
-			  <div>
-				<input id="twopizza" type="radio" name="pizzatoppings" value="2"><label style="color:black; font-size: 20px;" for="twopizza">2 Toppings</label>
-			  </div>
-			  <div>
-				<input id="threepizza" type="radio" name="pizzatoppings" value="3"><label style="color:black; font-size: 20px;" for="threepizza">3 Toppings</label>
-			  </div>
-			  <div>
-				<input id="fourpizza" type="radio" name="pizzatoppings" value="4"><label style="color:black; font-size: 20px;" for="fourpizza">4 Toppings</label>
-			  </div>
-			  <div>
-				<input id="fivepizza" type="radio" name="pizzatoppings" value="5"><label style="color:black; font-size: 20px;" for="fivepizza">5 Toppings</label>
-			  </div>
-			  <div>
-				<input id="sixpizza" type="radio" name="pizzatoppings" value="15"><label style="color:black; font-size: 20px;" for="sixpizza">6 Or More Toppings</label>
-			  </div>
-			  <div>
-				<input id="tacopizza" type="radio" name="pizzatoppings" value="8"><label style="color:black; font-size: 20px;" for="tacopizza">Taco Pizza</label>
-			  </div>
+		<h2 class="formfont">Select How Many Toppings</h2>
+		<form method="post"  name="pizzatoppingsform" id="pizzatoppingsformid">
+			<div id="main">
+				<div class="example">
+				  <div>
+					<input id="plainpizza" type="radio" name="pizzatoppings" value="0" checked="checked"><label style="color:black; font-size: 20px;" for="plainpizza">Plain Pizza</label>
+				  </div>
+				  <div>
+					<input id="onepizza" type="radio" name="pizzatoppings" value="1"><label style="color:black; font-size: 20px;" for="onepizza">1 Topping</label>
+				  </div>
+				  <div>
+					<input id="twopizza" type="radio" name="pizzatoppings" value="2"><label style="color:black; font-size: 20px;" for="twopizza">2 Toppings</label>
+				  </div>
+				  <div>
+					<input id="threepizza" type="radio" name="pizzatoppings" value="3"><label style="color:black; font-size: 20px;" for="threepizza">3 Toppings</label>
+				  </div>
+				  <div>
+					<input id="fourpizza" type="radio" name="pizzatoppings" value="4"><label style="color:black; font-size: 20px;" for="fourpizza">4 Toppings</label>
+				  </div>
+				  <div>
+					<input id="fivepizza" type="radio" name="pizzatoppings" value="5"><label style="color:black; font-size: 20px;" for="fivepizza">5 Toppings</label>
+				  </div>
+				  <div>
+					<input id="sixpizza" type="radio" name="pizzatoppings" value="15"><label style="color:black; font-size: 20px;" for="sixpizza">6 Or More Toppings</label>
+				  </div>
+				  <div>
+					<input id="tacopizza" type="radio" name="pizzatoppings" value="8"><label style="color:black; font-size: 20px;" for="tacopizza">Taco Pizza</label>
+				  </div>
+				</div>
 			</div>
-        </div>
-    </form>
-<div style="text-align:center;"><a class="myButton" id="btn3">Pick Pizza Toppings</a></div>
+		</form>
+	<div style="text-align:center;"><a class="myButton" id="btn3">Pick Pizza Toppings</a></div>
 </div>
 
 
 <!--Fourth Pizza Form, Select What Kinds Of Toppings-->
 <div class="pizzatoppingtypesformstyle" id="pizzatoppingtypes">
-	 <h2 class="formfont">Select Which Toppings</h2>
-     <form method="post" name="toppingtypesform" id="toppingtypesformid">
-        <div id="main">
-			<div class="example">
-			  <div>
-				<input id="bacon" type="checkbox" name="toppingtypes" value="Bacon"/><label style="color:black; font-size: 20px;" for="bacon">Bacon</label>
-			  </div>
-			  <div>
-				<input id="bananapeppers" type="checkbox" name="toppingtypes" value="Banana Peppers"/><label style="color:black; font-size: 20px;" for="bananapeppers">Banana Peppers</label>
-			  </div>
-			  <div>
-				<input id="blackolives" type="checkbox" name="toppingtypes" value="Black Olives"/><label style="color:black; font-size: 20px;" for="blackolives">Black Olives</label>
-			  </div>
-			  <div>
-				<input id="greenpeppers" type="checkbox" name="toppingtypes" value="Green Peppers"/><label style="color:black; font-size: 20px;" for="greenpeppers">Green Peppers</label>
-			  </div>
-			  <div>
-				<input id="ham" type="checkbox" name="toppingtypes" value="Ham"/><label style="color:black; font-size: 20px;" for="ham">Ham</label>
-			  </div>
-			  <div>
-				<input id="hamburger" type="checkbox" name="toppingtypes" value="Hamburger"/><label style="color:black; font-size: 20px;" for="hamburger">Hamburger</label>
-			  </div>
-			  <div>
-				<input id="italiansausage" type="checkbox" name="toppingtypes" value="Italian Sausage"/><label style="color:black; font-size: 20px;" for="italiansausage">Italian Sausage</label>
-			  </div>
-			  <div>
-				<input id="jalapenopeppers" type="checkbox" name="toppingtypes" value="Jalapeno Peppers"/><label style="color:black; font-size: 20px;" for="jalapenopeppers">Jalapeno Peppers</label>
-			  </div>
-			  <div>
-				<input id="cannedmushrooms" type="checkbox" name="toppingtypes" value="Canned Mushrooms"/><label style="color:black; font-size: 20px;" for="cannedmushrooms">Canned Mushrooms</label>
-			  </div>
-			  <div>
-				<input id="freshmushrooms" type="checkbox" name="toppingtypes" value="Fresh Mushrooms"/><label style="color:black; font-size: 20px;" for="freshmushrooms">Fresh Mushrooms</label>
-			  </div>
-			  <div>
-				<input id="onions" type="checkbox" name="toppingtypes" value="Onions"/><label style="color:black; font-size: 20px;" for="onions">Onions</label>
-			  </div>
-			  <div>
-				<input id="pepperoni" type="checkbox" name="toppingtypes" value="Pepperoni"/><label style="color:black; font-size: 20px;" for="pepperoni">Pepperoni</label>
-			  </div>
-			  <div>
-				<input id="pineapple" type="checkbox" name="toppingtypes" value="Pineapple"/><label style="color:black; font-size: 20px;" for="pineapple">Pineapple</label>
-			  </div>
-			  <div>
-				<input id="slicedsmokedsausage" type="checkbox" name="toppingtypes" value="Sliced Smoked Sausage"/><label style="color:black; font-size: 20px;" for="slicedsmokedsausage">Sliced Smoked Sausage</label>
-			  </div>
-			  <div>
-				<input id="extracheese" type="checkbox" name="toppingtypes" value="Extra Cheese"/><label style="color:black; font-size: 20px;" for="extracheese">Extra Cheese</label>
-			  </div>
+		 <h2 class="formfont">Select Which Toppings</h2>
+		 <form method="post" name="toppingtypesform" id="toppingtypesformid">
+			<div id="main">
+				<div class="example">
+				  <div>
+					<input id="bacon" type="checkbox" name="toppingtypes" value="Bacon"/><label style="color:black; font-size: 20px;" for="bacon">Bacon</label>
+				  </div>
+				  <div>
+					<input id="bananapeppers" type="checkbox" name="toppingtypes" value="Banana Peppers"/><label style="color:black; font-size: 20px;" for="bananapeppers">Banana Peppers</label>
+				  </div>
+				  <div>
+					<input id="blackolives" type="checkbox" name="toppingtypes" value="Black Olives"/><label style="color:black; font-size: 20px;" for="blackolives">Black Olives</label>
+				  </div>
+				  <div>
+					<input id="greenpeppers" type="checkbox" name="toppingtypes" value="Green Peppers"/><label style="color:black; font-size: 20px;" for="greenpeppers">Green Peppers</label>
+				  </div>
+				  <div>
+					<input id="ham" type="checkbox" name="toppingtypes" value="Ham"/><label style="color:black; font-size: 20px;" for="ham">Ham</label>
+				  </div>
+				  <div>
+					<input id="hamburger" type="checkbox" name="toppingtypes" value="Hamburger"/><label style="color:black; font-size: 20px;" for="hamburger">Hamburger</label>
+				  </div>
+				  <div>
+					<input id="italiansausage" type="checkbox" name="toppingtypes" value="Italian Sausage"/><label style="color:black; font-size: 20px;" for="italiansausage">Italian Sausage</label>
+				  </div>
+				  <div>
+					<input id="jalapenopeppers" type="checkbox" name="toppingtypes" value="Jalapeno Peppers"/><label style="color:black; font-size: 20px;" for="jalapenopeppers">Jalapeno Peppers</label>
+				  </div>
+				  <div>
+					<input id="cannedmushrooms" type="checkbox" name="toppingtypes" value="Canned Mushrooms"/><label style="color:black; font-size: 20px;" for="cannedmushrooms">Canned Mushrooms</label>
+				  </div>
+				  <div>
+					<input id="freshmushrooms" type="checkbox" name="toppingtypes" value="Fresh Mushrooms"/><label style="color:black; font-size: 20px;" for="freshmushrooms">Fresh Mushrooms</label>
+				  </div>
+				  <div>
+					<input id="onions" type="checkbox" name="toppingtypes" value="Onions"/><label style="color:black; font-size: 20px;" for="onions">Onions</label>
+				  </div>
+				  <div>
+					<input id="pepperoni" type="checkbox" name="toppingtypes" value="Pepperoni"/><label style="color:black; font-size: 20px;" for="pepperoni">Pepperoni</label>
+				  </div>
+				  <div>
+					<input id="pineapple" type="checkbox" name="toppingtypes" value="Pineapple"/><label style="color:black; font-size: 20px;" for="pineapple">Pineapple</label>
+				  </div>
+				  <div>
+					<input id="slicedsmokedsausage" type="checkbox" name="toppingtypes" value="Sliced Smoked Sausage"/><label style="color:black; font-size: 20px;" for="slicedsmokedsausage">Sliced Smoked Sausage</label>
+				  </div>
+				  <div>
+					<input id="extracheese" type="checkbox" name="toppingtypes" value="Extra Cheese"/><label style="color:black; font-size: 20px;" for="extracheese">Extra Cheese</label>
+				  </div>
+				</div>
 			</div>
-        </div>
-     </form>
-<div style="text-align:center;"><a class="myButton" id="btn4">Sort Pizza Toppings</a></div>
+		 </form>
+	<div style="text-align:center;"><a class="myButton" id="btn4">Sort Pizza Toppings</a></div>
 </div>
 
 
@@ -255,14 +254,16 @@ $('#btn3').click(function(e){
 });
 
 $(document).ready(function() {
-
+	var json_source = "js/json.js";
         $( "#sortable1, #sortable2, #sortable3" ).sortable({
       connectWith: ".connectedSortable"
     }).disableSelection();
 	
+    $("#sortable3").sortable();
+	
 $('#btn4').click(function(e){
 		e.preventDefault();
-        var itemSelector = $("#myList li"),
+        var itemSelector = $("#sortable3 li"),
             items = [],
             dataObj = {};
         $.each(itemSelector, function(i, v) {
@@ -314,24 +315,30 @@ $('#btn4').click(function(e){
 
         dataObj.stuff = items;
         $.ajax({
+					
+					url: json_source,
+					data: {
+						json: JSON.stringify(dataObj)
+					},
+					success: function(data) {
+						$("#sortable3").empty();
+						
+						
+						window.alert(dataObj.stuff);
 
-            data: {
-                json: JSON.stringify(dataObj)
-            },
-            success: function(data) {
-                $("#sortable3").empty();
-                $.each(data.stuff, function(k, v) {
-                    $("#sortable3").append("<li>" + v + "</li>");
-                })
-            },
-            type: 'POST',
-            datatype: 'json',
-            cache: false
-        });
+						$.each(data.stuff, function(k, v) {
+							$("#sortable3").append("<li>" + v + "</li>");
+						});
+					},
+					type: 'POST',
+					datatype: 'json',
+					cache: false
+				});
+				
 					$('#pizzatoppingtypes, #btn4').fadeOut('slow', function(){
 					$('#pizzatoppingsort, #btn5').fadeIn('slow');
 					$('#toppingtypesformid').submit();
-			});
+																			});
     });
 });
 
